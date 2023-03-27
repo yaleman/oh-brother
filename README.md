@@ -1,6 +1,6 @@
 # oh-brother
 
-Scanning with my Brother MFC-L2750DW.
+Scanning with my Brother MFC-L2750DW, based on [sbs20/scanservjs](https://github.com/sbs20/scanservjs/).
 
 Running it in the background:
 
@@ -21,13 +21,13 @@ make build
 make background
 ```
 
-## Notes
-
-- 64 bit deb driver here: <https://download.brother.com/welcome/dlf105200/brscan4-0.4.11-1.amd64.deb>
+1. Downloads the drivers from the Brother website.
+2. Builds the docker image.
+3. Runs the container!
 
 ## Example .env file
 
-```shell
+```shell .env
 SANED_NET_HOSTS="10.0.0.15"
 SCANNER_MODEL="MFC_L2750-DW"
 ```

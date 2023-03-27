@@ -8,4 +8,7 @@ COPY ./$DEBFILE "/$DEBFILE"
 RUN dpkg -i "/$DEBFILE"
 RUN rm "/$DEBFILE"
 RUN apt-get update && apt-get -y install iputils-ping && apt-get clean -y
-RUN brsaneconfig5 -a name="${SCANNER_NAME}" model="${SCANNER_MODEL}" nodename="${SCANNER_IP}"
+
+COPY ./startup.sh /startup.sh
+
+ENTRYPOINT ["/startup.sh"]
